@@ -1,0 +1,15 @@
+{
+  "name": "pop-cat-recycle-bin",
+  "version": "1.0.0",
+  "description": "popo cat RecycleBin.",
+  "main": "main.js",
+  "author": "legendQ",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^19.0.2"
+  }
+}

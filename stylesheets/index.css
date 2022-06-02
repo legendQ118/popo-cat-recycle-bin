@@ -1,0 +1,21 @@
+
+#Starter {
+    height: 100px;
+    width: 100px;
+    margin: 25px auto;
+    border-radius: 50%;
+    background-color: lightsalmon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+#Starter:hover{
+    background-color: #915943;
+}
+#wrapper{
+    height: 70px;
+    width: 70px;
+    background: transparent;
+}
