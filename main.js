@@ -6,7 +6,7 @@
 const {app, BrowserWindow, shell, ipcMain, screen, Tray, Menu } = require('electron')
 const path = require('path')
 
-const iconPt = './assets/icon.ico'
+const iconPt = path.join(__dirname, 'assets/icon.ico')
 
 let primaryScreen, mainWindow, popWindow
 
