@@ -2,8 +2,11 @@ const {shell, ipcRenderer} = require("electron");
 const fs = require('fs');
 const {exec} = require("child_process");
 
-const closeImg = '../assets/close.png'
-const openImg =  '../assets/open.png'
+import config from "../config.js";
+
+const closeImg = config.closeImg
+const openImg =  config.openImg
+const popMouth = document.querySelector('#pop-voice');
 
 function adjust() {
     let appDom = document.querySelector('#app')
@@ -19,10 +22,15 @@ function OpenRecycleBinDirectory() {
     exec('start shell:recyclebinfolder');
 }
 
+
+
 window.onresize = adjust
 window.onload = () => {
     // 调整页面结构
     adjust()
+    // init
+    init()
+
     let times = 0
     let exec = require('child_process').exec
     let timer = null
@@ -90,6 +98,7 @@ window.onload = () => {
             ipcRenderer.send('del-to-recycle', fl[i].path)
             stopEat()
         }
+        popMouth.play()
     })
     // open the recycleBinDirectory
     popCat.addEventListener('click', (ev) => {
@@ -108,9 +117,16 @@ window.onload = () => {
             }, 1000)
         }
     })
+    // init
+    function init() {
+        popClose()
+        popMouth.src = config.popVoice
+    }
     console.log("成功加载脚本")
     new Notification('启动OK', {
         icon: closeImg,
-        body: '加载pop-cat成功'
+        body: '加载pop-cat成功',
+        silent: true
     })
+    popMouth.play()
 }

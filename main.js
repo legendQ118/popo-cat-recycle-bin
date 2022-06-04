@@ -66,6 +66,8 @@ function createPopWindow() {
         .then(() => {console.log('load pop window')})
     popWindow.setMenu(null)
     popWindow.show()
+
+    popWindow.webContents.openDevTools({mode: "detach"})
 }
 
 function ipcRegistry() {
