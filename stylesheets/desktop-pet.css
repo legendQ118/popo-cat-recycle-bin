@@ -24,16 +24,11 @@ html,body{
     -webkit-user-select: none;
     -webkit-user-drag: none;
     user-select: none;
-    cursor: no-drop;
+    cursor: pointer;
     /*-webkit-app-region: drag;*/
     animation: bounce infinite 1s;
 }
-/*#pop-cat{*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: cover;*/
-/*}*/
+
 #btm-tit{
     color: honeydew;
     text-shadow: 1px 1px 1px black;
